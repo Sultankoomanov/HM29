@@ -64,7 +64,21 @@ final class Cat {
 
     /*********/
 
-    public void sortBreed() {
-        makeCats(10).sort((p1, p2) -> p1.getBreed().compareTo(p2.getBreed()));
+    public static int sortBreed(Cat p1, Cat p2) {
+        return p1.getBreed().compareTo(p2.getBreed());
+    }
+    public static int sortName(Cat p1, Cat p2) {
+        return p1.getName().compareTo(p2.getName());
+    }
+    public static int sortAge(Cat p1, Cat p2) {
+        return p1.getAge() - (p2.getAge());
+    }
+
+    public static boolean catColor (Cat p) {
+        return p.getColor().equals("GRAY");
+    }
+
+    public static boolean nameEmptyFive(Cat p) {
+        return p.getName().length() == 5;
     }
 }

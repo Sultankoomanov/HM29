@@ -7,14 +7,21 @@ public class Main {
         var cats = Cat.makeCats(10);
         Printer.print(cats);
 
-        cats.sort((p1, p2) -> p1.getBreed().compareTo(p2.getBreed()));
+        cats.sort(Cat::sortBreed);
         Printer.print(cats);
 
-        cats.sort((p1, p2) -> p1.getName().compareTo(p2.getName()));
+        cats.sort(Cat::sortName);
         Printer.print(cats);
 
-        cats.sort((p1, p2) -> p1.getAge() - (p2.getAge()));
+        cats.sort(Cat::sortAge);
         Printer.print(cats);
+
+        cats.removeIf(Cat::nameEmptyFive);
+        Printer.print(cats);
+
+//        cats.removeIf(Cat::catColor);
+//        Printer.print(cats);
+
 
         // А сюда добавьте код, который будет сортировать коллекцию котов
         // используйте лямбда-выражения и ссылки на методы
